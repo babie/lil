@@ -1,8 +1,18 @@
 import React from 'react'
-import { render, fireEvent } from '../testUtils'
-import { Home } from '../../pages/index'
+import { render } from '../testUtils'
+import { Doc } from '../../pages/[[...slug]]'
 
-describe('Home page', () => {
+describe('Doc page', () => {
+  const useRouter = jest.spyOn(require('next/router'), 'useRouter')
+
+  it('tmp ok', () => {
+    useRouter.mockImplementationOnce(() => ({
+      query: { slug: ['foo', 'a'] },
+    }))
+    const { asFragment } = render(<Doc />, {})
+    expect(asFragment()).toMatchSnapshot()
+  })
+  /*
   it('matches snapshot', () => {
     const { asFragment } = render(<Home />, {})
     expect(asFragment()).toMatchSnapshot()
@@ -14,4 +24,5 @@ describe('Home page', () => {
     fireEvent.click(getByText('Test Button'))
     expect(window.alert).toHaveBeenCalledWith('With typescript and Jest')
   })
+  */
 })
