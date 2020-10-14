@@ -3,7 +3,7 @@
 exports[`Doc page tmp ok 1`] = `
 <DocumentFragment>
   <p>
-    Post: fooa
+    Post: foob
   </p>
 </DocumentFragment>
 `;

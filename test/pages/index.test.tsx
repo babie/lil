@@ -1,14 +1,15 @@
 import React from 'react'
 import { render } from '../testUtils'
-import { Doc } from '../../pages/[[...slug]]'
+import { Doc } from '../../pages/[[...path]]'
 
 describe('Doc page', () => {
   const useRouter = jest.spyOn(require('next/router'), 'useRouter')
 
   it('tmp ok', () => {
     useRouter.mockImplementationOnce(() => ({
-      query: { slug: ['foo', 'a'] },
+      query: { path: ['foo', 'b'] },
     }))
+
     const { asFragment } = render(<Doc />, {})
     expect(asFragment()).toMatchSnapshot()
   })

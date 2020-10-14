@@ -4,13 +4,13 @@ import { useRouter } from 'next/router'
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [
-      { params: { slug: null } },
-      { params: { slug: ['a'] } },
-      { params: { slug: ['foo'] } },
-      { params: { slug: ['foo', 'b'] } },
-      { params: { slug: ['foo', 'bar'] } },
-      { params: { slug: ['foo', 'bar', 'c'] } },
-      { params: { slug: ['foo', 'bar', 'baz'] } },
+      { params: { path: null } },
+      { params: { path: ['a'] } },
+      { params: { path: ['foo'] } },
+      { params: { path: ['foo', 'b'] } },
+      { params: { path: ['foo', 'bar'] } },
+      { params: { path: ['foo', 'bar', 'c'] } },
+      { params: { path: ['foo', 'bar', 'baz'] } },
     ],
     fallback: false,
   }
@@ -24,9 +24,9 @@ export const getStaticProps: GetStaticProps = async (_context) => {
 
 export const Doc = () => {
   const router = useRouter()
-  const { slug } = router.query
+  const { path } = router.query
 
-  return <p>Post: {slug}</p>
+  return <p>Post: {path}</p>
 }
 
 export default Doc
