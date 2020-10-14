@@ -5,7 +5,7 @@ import fs from 'fs'
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [
-      { params: { path: null } },
+      { params: { path: [] } },
       { params: { path: ['foo'] } },
       { params: { path: ['foo', 'bar'] } },
       { params: { path: ['foo', 'bar', 'baz'] } },
@@ -18,7 +18,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { path } = params
   const _path = typeof path === 'string' ? [path] : path
-  const dir = nodePath.join(process.cwd(), 'lil', ..._path)
+  let dir: string
+  if (_path) {
+    dir = nodePath.join(process.cwd(), 'lil', ..._path)
+  } else {
+    dir = nodePath.join(process.cwd(), 'lil')
+  }
   const file = nodePath.join(dir, 'index.md')
   let md: string
   if (fs.existsSync(file) && fs.statSync(file).isFile()) {
