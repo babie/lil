@@ -3,14 +3,16 @@ import { render } from '../testUtils'
 import { Doc } from '../../pages/[[...path]]'
 
 describe('Doc page', () => {
-  const useRouter = jest.spyOn(require('next/router'), 'useRouter')
+  //const useRouter = jest.spyOn(require('next/router'), 'useRouter')
 
-  it('tmp ok', () => {
+  it('matches snapshot', () => {
+    /*
     useRouter.mockImplementationOnce(() => ({
-      query: { path: ['foo', 'b'] },
+      query: { path: ['foo', 'bar'] },
     }))
+    */
 
-    const { asFragment } = render(<Doc />, {})
+    const { asFragment } = render(<Doc md={`#Test\nThis is test page.`} />, {})
     expect(asFragment()).toMatchSnapshot()
   })
   /*

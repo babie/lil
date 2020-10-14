@@ -1,3 +1,0 @@
-# B
-
-This is b.

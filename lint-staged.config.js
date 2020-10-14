@@ -1,6 +1,9 @@
 module.exports = {
   '*.@(ts|tsx)': (filenames) => {
     const wraped = filenames.map((filename) => `'${filename}'`)
-    return [`yarn lint ${wraped.join(' ')}`, `yarn format ${wraped.join(' ')}`]
+    return [
+      `eslint --ext .js,.jsx,.ts,.tsx ${wraped.join(' ')}`,
+      `prettier --write ${wraped.join(' ')}`,
+    ]
   },
 }

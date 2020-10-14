@@ -10,7 +10,7 @@
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "test": "jest",
     "test-all": "yarn lint && yarn type-check && yarn test"
   },
