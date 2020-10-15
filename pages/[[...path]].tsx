@@ -1,16 +1,32 @@
 import type { GetStaticProps, GetStaticPaths } from 'next'
 import * as nodePath from 'path'
 import fs from 'fs'
+import walk from 'walk'
 
+type Path = {
+  params: { path: string[] }
+}
 export const getStaticPaths: GetStaticPaths = async () => {
+  const paths: Path[] = [{ params: { path: [] } }]
+  const baseDir = nodePath.join(process.cwd(), 'lil')
+  walk.walkSync(baseDir, {
+    listeners: {
+      directories: (base, stats, next) => {
+        paths.push(
+          ...stats.map(
+            (stat): Path => {
+              const path = [...base.replace(baseDir, '').split('/'), stat.name]
+              path.shift()
+              return { params: { path } }
+            }
+          )
+        )
+        next()
+      },
+    },
+  })
   return {
-    paths: [
-      { params: { path: [] } },
-      { params: { path: ['foo'] } },
-      { params: { path: ['foo', 'bar'] } },
-      { params: { path: ['foo', 'bar', 'baz'] } },
-      { params: { path: ['foo', 'bar', 'baz', 'qux'] } },
-    ],
+    paths,
     fallback: false,
   }
 }
