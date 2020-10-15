@@ -1,30 +1,20 @@
 import type { GetStaticProps, GetStaticPaths } from 'next'
-import * as nodePath from 'path'
+import * as nodepath from 'path'
 import fs from 'fs'
-import walk from 'walk'
+import { getPaths } from '../lib/paths'
 
 type Path = {
   params: { path: string[] }
 }
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths: Path[] = [{ params: { path: [] } }]
-  const baseDir = nodePath.join(process.cwd(), 'lil')
-  walk.walkSync(baseDir, {
-    listeners: {
-      directories: (base, stats, next) => {
-        paths.push(
-          ...stats.map(
-            (stat): Path => {
-              const path = [...base.replace(baseDir, '').split('/'), stat.name]
-              path.shift()
-              return { params: { path } }
-            }
-          )
-        )
-        next()
-      },
-    },
-  })
+  const baseDir = nodepath.join(process.cwd(), 'lil')
+  const paths: Path[] = [
+    { params: { path: [] } },
+    ...getPaths(baseDir).map((pathStr) => {
+      return { params: { path: pathStr.split(nodepath.sep) } }
+    }),
+  ]
+
   return {
     paths,
     fallback: false,
@@ -36,11 +26,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const _path = typeof path === 'string' ? [path] : path
   let dir: string
   if (_path) {
-    dir = nodePath.join(process.cwd(), 'lil', ..._path)
+    dir = nodepath.join(process.cwd(), 'lil', ..._path)
   } else {
-    dir = nodePath.join(process.cwd(), 'lil')
+    dir = nodepath.join(process.cwd(), 'lil')
   }
-  const file = nodePath.join(dir, 'index.md')
+  const file = nodepath.join(dir, 'index.md')
   let md: string
   if (fs.existsSync(file) && fs.statSync(file).isFile()) {
     md = fs.readFileSync(file, { encoding: 'utf8' })
