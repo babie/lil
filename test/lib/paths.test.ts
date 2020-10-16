@@ -40,7 +40,7 @@ describe('paths library', () => {
   })
 
   describe('when dir has no index.md', () => {
-    it('getMarkdown() lists directries', () => {
+    it('getContent() lists directries', () => {
       const expected = `# Index\n\n- bar`.trim()
       const actual = getContent(
         path.join(process.cwd(), 'test/lib/__dirs__', 'foo')
@@ -51,7 +51,7 @@ describe('paths library', () => {
   })
 
   describe('when dir has index.md', () => {
-    it('getMarkdown() returns file content', () => {
+    it('getContent() returns file content', () => {
       const expected = `# Bar\n\nThis is bar.`.trim()
       const actual = getContent(
         path.join(process.cwd(), 'test/lib/__dirs__', 'foo/bar')
@@ -62,7 +62,7 @@ describe('paths library', () => {
   })
 
   describe(`when dir don't exist`, () => {
-    it('getMarkdown() returns null', () => {
+    it('getContent() returns null', () => {
       const expected = null
       const actual = getContent(
         path.join(process.cwd(), 'test/lib/__dirs__', 'not/exist')
