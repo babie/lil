@@ -26,7 +26,9 @@
     "next": "9.5.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "rehype-preset-minify": "^5.0.3",
     "rehype-react": "^6.1.0",
+    "remark-gfm": "^1.0.0",
     "remark-parse": "^9.0.0",
     "remark-rehype": "^8.0.0",
     "unified": "^9.2.0"
