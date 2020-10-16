@@ -2,9 +2,13 @@
 
 exports[`Doc page matches snapshot 1`] = `
 <DocumentFragment>
+  <h1>
+    Test
+  </h1>
+  
+
   <p>
-    #Test
-This is test page.
+    This is a test page.
   </p>
 </DocumentFragment>
 `;

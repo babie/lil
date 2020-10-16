@@ -1,6 +1,7 @@
 import type { GetStaticProps, GetStaticPaths } from 'next'
 import * as nodepath from 'path'
 import { getContent, getPaths } from '../lib/paths'
+import { md2react } from '../lib/markdown'
 
 type Path = {
   params: { path: string[] }
@@ -33,7 +34,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 export const Doc = ({ markdown }) => {
-  return <p>{markdown}</p>
+  return md2react(markdown)
 }
 
 export default Doc
