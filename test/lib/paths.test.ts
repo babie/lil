@@ -1,5 +1,5 @@
 import path from 'path'
-import { addTrailingSlash, getPaths } from '../../lib/paths'
+import { addTrailingSlash, getMarkdown, getPaths } from '../../lib/paths'
 
 describe('paths library', () => {
   describe('with trailing slash', () => {
@@ -18,9 +18,42 @@ describe('paths library', () => {
     })
   })
 
-  it('getPaths() get path strings', () => {
+  it('getPaths() returns path strings', () => {
     const expected = ['foo', 'foo/bar', 'foo/bar/baz', 'foo/bar/baz/qux']
-    const actual = getPaths(path.join(process.cwd(), 'test/lib/__dirs__/'))
+    const actual = getPaths(path.join(process.cwd(), 'test/lib/__dirs__'))
     expect(actual).toMatchObject(expected)
+  })
+
+  describe('when dir has no index.md', () => {
+    it('getMarkdown() lists directries', () => {
+      const expected = `# Index\n\n- bar`.trim()
+      const actual = getMarkdown(
+        path.join(process.cwd(), 'test/lib/__dirs__', 'foo')
+      ).trim()
+
+      expect(actual).toMatch(expected)
+    })
+  })
+
+  describe('when dir has index.md', () => {
+    it('getMarkdown() returns file content', () => {
+      const expected = `# Bar\n\nThis is bar.`.trim()
+      const actual = getMarkdown(
+        path.join(process.cwd(), 'test/lib/__dirs__', 'foo/bar')
+      ).trim()
+
+      expect(actual).toMatch(expected)
+    })
+  })
+
+  describe(`when dir don't exist`, () => {
+    it('getMarkdown() returns null', () => {
+      const expected = null
+      const actual = getMarkdown(
+        path.join(process.cwd(), 'test/lib/__dirs__', 'not/exist')
+      )
+
+      expect(actual).toBe(expected)
+    })
   })
 })

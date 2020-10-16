@@ -12,7 +12,10 @@ describe('Doc page', () => {
     }))
     */
 
-    const { asFragment } = render(<Doc md={`#Test\nThis is test page.`} />, {})
+    const { asFragment } = render(
+      <Doc markdown={`#Test\nThis is test page.`} />,
+      {}
+    )
     expect(asFragment()).toMatchSnapshot()
   })
   /*
