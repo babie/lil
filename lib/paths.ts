@@ -1,6 +1,5 @@
 import fs from 'fs'
 import path from 'path'
-import walk from 'walk'
 
 export const addTrailingSlash = (dir: string) => {
   if (dir[dir.length - 1] === path.sep) {
@@ -10,20 +9,24 @@ export const addTrailingSlash = (dir: string) => {
   }
 }
 
+type WalkDirCallback = (path: string, stats: fs.Stats) => void
+export const walkDir = (dir: string, cb: WalkDirCallback) => {
+  const entries = fs.readdirSync(dir)
+  entries.forEach((entry) => {
+    const entrypath = path.join(dir, entry)
+    const stats = fs.statSync(entrypath)
+    if (stats.isDirectory()) {
+      cb(entrypath, stats)
+      walkDir(entrypath, cb)
+    }
+  })
+}
+
 export const getPaths = (baseDir: string) => {
   const paths: string[] = []
   const _baseDir = addTrailingSlash(baseDir)
-  walk.walkSync(baseDir, {
-    listeners: {
-      directories: (root, stats, next) => {
-        paths.push(
-          ...stats.map((stat) => {
-            return path.join(root, stat.name).replace(`${_baseDir}`, '')
-          })
-        )
-        next()
-      },
-    },
+  walkDir(baseDir, (entrypath, _stats) => {
+    paths.push(entrypath.replace(`${_baseDir}`, ''))
   })
   return paths
 }

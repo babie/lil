@@ -1,5 +1,10 @@
 import path from 'path'
-import { addTrailingSlash, getMarkdown, getPaths } from '../../lib/paths'
+import {
+  addTrailingSlash,
+  getMarkdown,
+  getPaths,
+  walkDir,
+} from '../../lib/paths'
 
 describe('paths library', () => {
   describe('with trailing slash', () => {
@@ -16,6 +21,16 @@ describe('paths library', () => {
       const actual = addTrailingSlash('dir')
       expect(actual).toMatch(expected)
     })
+  })
+
+  it('walkDir() returns path strings', () => {
+    const expected = ['foo', 'foo/bar', 'foo/bar/baz', 'foo/bar/baz/qux']
+    const baseDir = path.join(process.cwd(), 'test/lib/__dirs__')
+    let actual = []
+    walkDir(baseDir, (dirpath, _stats) => {
+      actual = [...actual, dirpath.replace(addTrailingSlash(baseDir), '')]
+    })
+    expect(actual).toMatchObject(expected)
   })
 
   it('getPaths() returns path strings', () => {
