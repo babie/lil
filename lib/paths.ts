@@ -32,7 +32,7 @@ export const getPaths = (baseDir: string) => {
   return paths
 }
 
-export const getMarkdown = (dir: string): string | null => {
+export const getContent = (dir: string): string | null => {
   const file = path.join(dir, 'index.md')
   let markdown: string
   if (fs.existsSync(file) && fs.statSync(file).isFile()) {

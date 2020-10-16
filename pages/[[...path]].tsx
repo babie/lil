@@ -1,6 +1,6 @@
 import type { GetStaticProps, GetStaticPaths } from 'next'
 import * as nodepath from 'path'
-import { getMarkdown, getPaths } from '../lib/paths'
+import { getContent, getPaths } from '../lib/paths'
 
 type Path = {
   params: { path: string[] }
@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const _path = typeof path === 'string' ? [path] : path
   const baseDir = nodepath.join(process.cwd(), 'lil')
   const dir = _path ? nodepath.join(baseDir, ..._path) : baseDir
-  const markdown = getMarkdown(dir)
+  const markdown = getContent(dir)
 
   return {
     props: { markdown },

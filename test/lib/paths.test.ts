@@ -1,7 +1,7 @@
 import path from 'path'
 import {
   addTrailingSlash,
-  getMarkdown,
+  getContent,
   getPaths,
   walkDir,
 } from '../../lib/paths'
@@ -42,7 +42,7 @@ describe('paths library', () => {
   describe('when dir has no index.md', () => {
     it('getMarkdown() lists directries', () => {
       const expected = `# Index\n\n- bar`.trim()
-      const actual = getMarkdown(
+      const actual = getContent(
         path.join(process.cwd(), 'test/lib/__dirs__', 'foo')
       ).trim()
 
@@ -53,7 +53,7 @@ describe('paths library', () => {
   describe('when dir has index.md', () => {
     it('getMarkdown() returns file content', () => {
       const expected = `# Bar\n\nThis is bar.`.trim()
-      const actual = getMarkdown(
+      const actual = getContent(
         path.join(process.cwd(), 'test/lib/__dirs__', 'foo/bar')
       ).trim()
 
@@ -64,7 +64,7 @@ describe('paths library', () => {
   describe(`when dir don't exist`, () => {
     it('getMarkdown() returns null', () => {
       const expected = null
-      const actual = getMarkdown(
+      const actual = getContent(
         path.join(process.cwd(), 'test/lib/__dirs__', 'not/exist')
       )
 
