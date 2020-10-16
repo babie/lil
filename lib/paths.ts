@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import ejs from 'ejs'
 
 export const addTrailingSlash = (dir: string) => {
   if (dir[dir.length - 1] === path.sep) {
@@ -37,10 +38,11 @@ export const getMarkdown = (dir: string): string | null => {
   if (fs.existsSync(file) && fs.statSync(file).isFile()) {
     markdown = fs.readFileSync(file, { encoding: 'utf8' })
   } else if (fs.existsSync(dir) && fs.statSync(dir).isDirectory()) {
-    markdown = `# Index\n\n${fs
-      .readdirSync(dir)
-      .map((p) => `- ${p}`)
-      .join('\n')}`
+    const template = fs.readFileSync(
+      path.join(process.cwd(), 'templates/dir.md.ejs'),
+      { encoding: 'utf8' }
+    )
+    markdown = ejs.render(template, { dirs: fs.readdirSync(dir) })
   } else {
     markdown = null
   }
