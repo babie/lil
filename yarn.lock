@@ -1494,13 +1494,6 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.0.tgz#7036640b4e21cc2f259ae826ce843d277dad8cff"
   integrity sha512-RJJrrySY7A8havqpGObOB4W92QXKJo63/jFLLgpvOtsGUqbQZ9Sbgl35KMm1DjC6j7AvmmU2bIno+3IyEaemaw==
 
-"@types/walk@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@types/walk/-/walk-2.3.0.tgz#1bfeb19f6fab63a1a39f929c0f2b4c02134468f8"
-  integrity sha512-I1w1RJW5kowe7JnekvVTSD/Lek8WK0N/Fz80n9Chnb5jYo+mne4tDthgCAV/Fo1tym9m8W6stfsJQvjRMpOHgw==
-  dependencies:
-    "@types/node" "*"
-
 "@types/yargs-parser@*":
   version "15.0.0"
   resolved "https://registry.yarnpkg.com/@types/yargs-parser/-/yargs-parser-15.0.0.tgz#cb3f9f741869e20cce330ffbeb9271590483882d"
