@@ -34,7 +34,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 export const Doc = ({ markdown }) => {
-  return md2react(markdown)
+  const { elements } = md2react(markdown)
+  return elements
 }
 
 export default Doc
