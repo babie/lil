@@ -33,6 +33,8 @@
     "remark-gfm": "^1.0.0",
     "remark-parse": "^9.0.0",
     "remark-rehype": "^8.0.0",
+    "remark-slug": "^6.0.0",
+    "remark-toc": "^7.0.0",
     "unified": "^9.2.0"
   },
   "devDependencies": {

@@ -1,6 +1,8 @@
 import React from 'react'
 import unified from 'unified'
+import toc from './remark-toc'
 import md2remark from 'remark-parse'
+import slug from 'remark-slug'
 import gfm from 'remark-gfm'
 import remark2rehype from 'remark-rehype'
 import sanitize from 'rehype-sanitize'
@@ -10,7 +12,9 @@ import rehype2react from 'rehype-react'
 
 export const md2react = (md: string): React.ReactElement => {
   const processor = unified()
+    .use(toc, { prefix: 'user-content-' })
     .use(md2remark)
+    .use(slug)
     .use(gfm)
     .use(remark2rehype)
     .use(sanitize, gfmschema)

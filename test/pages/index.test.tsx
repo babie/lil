@@ -18,7 +18,9 @@ describe('Doc page', () => {
       {}
     )
     expect(asFragment()).toMatchSnapshot()
-    expect(screen.getByText('Test')).toContainHTML('<h1>Test</h1>')
+    expect(screen.getByText('Test')).toContainHTML(
+      '<h1 id="user-content-test">Test</h1>'
+    )
     expect(screen.getByText('This is a test page.')).toContainHTML(
       '<p>This is a test page.</p>'
     )
