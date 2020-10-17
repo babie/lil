@@ -5,3 +5,8 @@ declare module '*/lil.json' {
   const config: Config
   export default config
 }
+
+declare module 'hast-util-sanitize/lib/github.json' {
+  const data: any
+  export default data
+}

@@ -15,4 +15,12 @@ describe('markdown library', () => {
       '<th style="text-align: left;">b</th>'
     )
   })
+
+  it('md2react() sanitize dangerous tags/attrs', () => {
+    render(md2react(`[delta](javascript:alert())`))
+
+    expect(screen.getByText('delta')).not.toContainHTML(
+      '<a href="javascript:alert()">delta</a>'
+    )
+  })
 })
