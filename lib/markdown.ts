@@ -2,6 +2,7 @@ import React from 'react'
 import unified from 'unified'
 import toc from './remark-toc'
 import frontmatter from 'remark-frontmatter'
+import extract from './frontmatter-extract'
 import md2remark from 'remark-parse'
 import slug from 'remark-slug'
 import gfm from 'remark-gfm'
@@ -10,7 +11,6 @@ import sanitize from 'rehype-sanitize'
 import gfmschema from 'hast-util-sanitize/lib/github.json'
 import minify from './rehype-preset-minify'
 import rehype2react from 'rehype-react'
-import matter from 'vfile-matter'
 
 type Result = {
   elements: React.ReactElement
@@ -20,6 +20,7 @@ export const md2react = (md: string): Result => {
   const processor = unified()
     .use(toc, { prefix: 'user-content-' })
     .use(frontmatter)
+    .use(extract)
     .use(md2remark)
     .use(slug)
     .use(gfm)
@@ -31,7 +32,6 @@ export const md2react = (md: string): Result => {
       Fragment: React.Fragment,
     })
   const vfile = processor.processSync(md)
-  matter(vfile)
   const elements = vfile.result as React.ReactElement
   const metadata = vfile.data
   return {
