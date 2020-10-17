@@ -5,7 +5,7 @@ import gfm from 'remark-gfm'
 import remark2rehype from 'remark-rehype'
 import sanitize from 'rehype-sanitize'
 import gfmschema from 'hast-util-sanitize/lib/github.json'
-import minify from 'rehype-preset-minify'
+import minify from './minify'
 import rehype2react from 'rehype-react'
 
 export const md2react = (md: string): React.ReactElement => {
