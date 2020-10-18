@@ -12,11 +12,11 @@
     "v:format": "yarn workspace lil-viewer prettier --write .",
     "v:lint": "yarn workspace lil-viewer eslint --ext .js,.jsx,.ts,.tsx .",
     "v:test": "yarn workspace lil-viewer jest",
-    "v:test-all": "yarn workspace lil-viewer yarn lint && yarn type-check && yarn test"
+    "v:test-all": "yarn v:lint && yarn v:type-check && yarn v:test"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn workspace lint-staged",
+      "pre-commit": "yarn workspace lil-viewer lint-staged",
       "pre-push": "yarn run v:type-check"
     }
   },
