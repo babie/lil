@@ -33,7 +33,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 }
 
-export const Doc = ({ markdown }) => {
+type Props = {
+  markdown: string
+}
+export const Doc = ({ markdown }: Props) => {
   const { elements } = md2react(markdown)
   return elements
 }

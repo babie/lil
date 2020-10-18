@@ -16,17 +16,23 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "yarn workspace lint-staged",
       "pre-push": "yarn run v:type-check"
     }
   },
   "devDependencies": {
     "husky": "^4.3.0",
-    "lint-staged": "^10.4.0",
     "prettier": "^2.1.2"
   },
   "workspaces": {
-    "packages": ["packages/*"],
-    "nohoist": ["**/jest", "**/eslint", "**/@typescript-eslint"]
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/jest",
+      "**/eslint",
+      "**/@typescript-eslint",
+      "**/lint-staged"
+    ]
   }
 }
