@@ -12,12 +12,28 @@
     "v:format": "yarn workspace lil-viewer prettier --write .",
     "v:lint": "yarn workspace lil-viewer eslint --ext .js,.jsx,.ts,.tsx .",
     "v:test": "yarn workspace lil-viewer jest",
-    "v:test-all": "yarn v:lint && yarn v:type-check && yarn v:test"
+    "v:test-all": "yarn v:lint && yarn v:type-check && yarn v:test",
+    "v:staged": "yarn workspace lil-viewer lint-staged",
+    "e:dev": "yarn workspace lil-editor next dev",
+    "e:build": "yarn workspace lil-editor next build",
+    "e:start": "yarn workspace lil-editor next start",
+    "e:type-check": "yarn workspace lil-editor tsc --pretty --noEmit",
+    "e:format": "yarn workspace lil-editor prettier --write .",
+    "e:lint": "yarn workspace lil-editor eslint --ext .js,.jsx,.ts,.tsx .",
+    "e:test": "yarn workspace lil-editor jest",
+    "e:test-all": "yarn e:lint && yarn e:type-check && yarn e:test",
+    "e:staged": "yarn workspace lil-editor lint-staged",
+    "type-check": "yarn v:type-check && yarn e:type-check",
+    "format":     "yarn v:format && yarn e:format",
+    "lint":       "yarn v:lint && yarn e:lint",
+    "test":       "yarn v:test && yarn e:test",
+    "test-all":   "yarn v:test-all && yarn e:test-all",
+    "staged":     "yarn v:staged && yarn e:staged"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn workspace lil-viewer lint-staged",
-      "pre-push": "yarn run v:type-check"
+      "pre-commit": "yarn staged",
+      "pre-push": "yarn run type-check"
     }
   },
   "devDependencies": {
