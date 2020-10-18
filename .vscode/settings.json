@@ -1,13 +1,4 @@
 {
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "eslint.packageManager": "yarn",
-  "eslint.workingDirectories": [
-    { "directory": "./packages/lil-viewer", "changeProcessCWD": true },
-  ],
+  "eslint.enable": false,
   "jest.autoEnable": false
 }
