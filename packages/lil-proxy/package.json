@@ -5,6 +5,7 @@
   "version": "0.9.0",
   "private": true,
   "scripts": {
+    "dev": "./bin/lil-proxy-dev",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
@@ -32,6 +33,7 @@
     "jest": "^26.5.2",
     "jest-watch-typeahead": "^0.6.1",
     "lint-staged": "^10.4.0",
-    "typescript": "^4.0.3"
+    "typescript": "^4.0.3",
+    "vercel": "^20.1.2"
   }
 }
