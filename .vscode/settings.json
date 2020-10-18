@@ -8,5 +8,6 @@
   "eslint.packageManager": "yarn",
   "eslint.workingDirectories": [
     { "directory": "./packages/lil-viewer", "changeProcessCWD": true },
-  ]
+  ],
+  "jest.autoEnable": false
 }

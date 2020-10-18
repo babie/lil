@@ -1,8 +1,13 @@
 {
   "folders": [
     {
-      "name": "lil-viewer",
-      "path": "packages/lil-viewer"
+      "path": "."
     },
+    {
+      "path": "packages/lil-viewer"
+    }
   ],
+  "settings": {
+    "jest.disabledWorkspaceFolders": ["."]
+  }
 }
