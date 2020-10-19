@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { useState } from 'react'
+import { setCookie } from '../lib/cookie'
 
 export const Home = (): JSX.Element => {
   const [token, setToken] = useState('')
@@ -18,6 +19,8 @@ export const Home = (): JSX.Element => {
     e.preventDefault()
     e.stopPropagation()
     //console.log(token)
+    setCookie('token', token)
+    //console.log(getCookie('token'))
   }
 
   return (
