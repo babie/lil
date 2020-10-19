@@ -1,10 +1,19 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
-import { setCookie } from '../lib/cookie'
+import { getCookie, setCookie } from '../lib/cookie'
 import { getUser } from '../lib/user'
 
 export const Home = (): JSX.Element => {
   const [token, setToken] = useState('')
+  const router = useRouter()
+
+  if (process.browser) {
+    const authorized = getCookie('authorized')
+    if (authorized) {
+      router.push('/tree')
+    }
+  }
 
   const handleChange = (e) => {
     switch (e.target.name) {
@@ -20,11 +29,13 @@ export const Home = (): JSX.Element => {
     e.preventDefault()
     e.stopPropagation()
     //console.log(token)
-    setCookie('token', token)
     getUser(token)
-      .then((data) => {
+      .then((user) => {
         //console.dir(data)
-        setCookie('user', data.toString())
+        for (const k of Object.keys(user)) {
+          setCookie(k, user[k])
+        }
+        setCookie('authorized', 'true')
       })
       .catch((_reason) => {
         //console.log(reason)
