@@ -18,20 +18,18 @@ export const Home = (): JSX.Element => {
     }
   }
 
-  const handleTokenChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     switch (e.target.name) {
       case 'token':
         setToken(e.target.value)
         break
+      case 'keep':
+        setKeep(e.target.checked)
+        break
       default:
-      //console.log('noop')
+        //console.log('noop')
+        break
     }
-  }
-
-  const handleKeepChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    e.preventDefault()
-    e.stopPropagation()
-    setKeep(e.target.checked)
   }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
@@ -65,21 +63,12 @@ export const Home = (): JSX.Element => {
           <div>
             <label>
               Token{' '}
-              <input
-                type="password"
-                name="token"
-                onChange={handleTokenChange}
-              />
+              <input type="password" name="token" onChange={handleChange} />
             </label>
           </div>
           <div>
             <label>
-              <input
-                type="checkbox"
-                onChange={handleKeepChange}
-                checked={keep}
-              />{' '}
-              Keep login
+              <input type="checkbox" onChange={handleChange} /> Keep login
             </label>
           </div>
           <div>
