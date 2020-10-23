@@ -1,19 +1,19 @@
 import { useRouter } from 'next/router'
-import { getCookie } from '../../lib/cookie'
+import { useRecoilValue } from 'recoil'
+import { currentUserState } from '../../lib/states/user'
 
 export const Tree = () => {
-  const authorized = getCookie('authorized')
   const router = useRouter()
-  let login = ''
+  const currentUser = useRecoilValue(currentUserState)
 
   if (process.browser) {
-    if (!authorized) {
+    //console.dir(currentUser)
+    if (currentUser === null) {
       router.push('/')
     }
-    login = getCookie('login')
   }
 
-  return <div>Tree, user: {login}</div>
+  return <div>Tree, user: {currentUser.login}</div>
 }
 
 export default Tree

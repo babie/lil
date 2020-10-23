@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react'
+import { RecoilRoot } from 'recoil'
 // import { ThemeProvider } from "my-ui-lib"
 // import { TranslationProvider } from "my-i18n-lib"
 // import defaultStrings from "i18n/en-x-default"
@@ -15,7 +16,7 @@ const Providers = ({ children }) => {
 }
 
 const customRender = (ui, options = {}) =>
-  render(ui, { wrapper: Providers, ...options })
+  render(<RecoilRoot>{ui}</RecoilRoot>, { wrapper: Providers, ...options })
 
 // re-export everything
 export * from '@testing-library/react'

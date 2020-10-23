@@ -1,16 +1,17 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
-import { getCookie, setCookie } from '../lib/cookie'
+import { useRecoilState } from 'recoil'
+import { currentUserState } from '../lib/states'
 import { getUser } from '../lib/user'
 
 export const Home = (): JSX.Element => {
   const [token, setToken] = useState('')
+  const [currentUser, setCurrentUser] = useRecoilState(currentUserState)
   const router = useRouter()
 
   if (process.browser) {
-    const authorized = getCookie('authorized')
-    if (authorized) {
+    if (currentUser !== null) {
       router.push('/tree')
     }
   }
@@ -28,19 +29,20 @@ export const Home = (): JSX.Element => {
   const handleSubmit = (e) => {
     e.preventDefault()
     e.stopPropagation()
-    //console.log(token)
     getUser(token)
       .then((user) => {
-        //console.dir(data)
-        for (const k of Object.keys(user)) {
-          setCookie(k, user[k])
-        }
-        setCookie('authorized', 'true')
+        const { login, name, email, bio, avatar_url } = user
+        setCurrentUser({
+          login,
+          name,
+          email,
+          bio,
+          avatar_url,
+        })
       })
       .catch((_reason) => {
-        //console.log(reason)
+        //console.log(_reason)
       })
-    //console.log(getCookie('token'))
   }
 
   return (
