@@ -8,14 +8,12 @@ export const Tree = () => {
   const [currentUser, setCurrentUser] = useRecoilState(currentUserState)
 
   if (process.browser) {
-    //console.dir(currentUser)
     if (currentUser === null) {
       loadCurrentUser()
         .then((user) => {
           setCurrentUser(user)
         })
         .catch((_reason) => {
-          // TODO: display reason
           router.push('/')
         })
     }

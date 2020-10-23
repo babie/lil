@@ -8,6 +8,7 @@ import { fetchUser, saveCurrentUser } from '../lib/authorization'
 export const Home = (): JSX.Element => {
   const [token, setToken] = useState('')
   const [keep, setKeep] = useState(false)
+  const [reason, setReason] = useState('')
   const [currentUser, setCurrentUser] = useRecoilState(currentUserState)
   const router = useRouter()
 
@@ -44,8 +45,7 @@ export const Home = (): JSX.Element => {
         }
       })
       .catch((_reason) => {
-        // TODO: display reason
-        //console.log(_reason)
+        setReason(_reason.message)
       })
   }
 
@@ -60,7 +60,7 @@ export const Home = (): JSX.Element => {
         <h1 className="title">Lil Editor</h1>
 
         <p className="description">Get started</p>
-        <p>{token}</p>
+        <p>{reason}</p>
         <form onSubmit={handleSubmit}>
           <div>
             <label>
