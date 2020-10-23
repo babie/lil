@@ -3,10 +3,11 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useRecoilState } from 'recoil'
 import { currentUserState } from '../lib/states'
-import { getUser } from '../lib/user'
+import { fetchUser, saveCurrentUser } from '../lib/authorization'
 
 export const Home = (): JSX.Element => {
   const [token, setToken] = useState('')
+  const [keep, setKeep] = useState(false)
   const [currentUser, setCurrentUser] = useRecoilState(currentUserState)
   const router = useRouter()
 
@@ -16,7 +17,7 @@ export const Home = (): JSX.Element => {
     }
   }
 
-  const handleChange = (e) => {
+  const handleTokenChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     switch (e.target.name) {
       case 'token':
         setToken(e.target.value)
@@ -26,21 +27,24 @@ export const Home = (): JSX.Element => {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleKeepChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault()
     e.stopPropagation()
-    getUser(token)
+    setKeep(e.target.checked)
+  }
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault()
+    e.stopPropagation()
+    fetchUser(token)
       .then((user) => {
-        const { login, name, email, bio, avatar_url } = user
-        setCurrentUser({
-          login,
-          name,
-          email,
-          bio,
-          avatar_url,
-        })
+        setCurrentUser(user)
+        if (keep) {
+          saveCurrentUser(user)
+        }
       })
       .catch((_reason) => {
+        // TODO: display reason
         //console.log(_reason)
       })
   }
@@ -58,11 +62,29 @@ export const Home = (): JSX.Element => {
         <p className="description">Get started</p>
         <p>{token}</p>
         <form onSubmit={handleSubmit}>
-          <label>
-            Token:{' '}
-            <input type="password" name="token" onChange={handleChange} />
-          </label>
-          <input type="submit" value="Login" />
+          <div>
+            <label>
+              Token{' '}
+              <input
+                type="password"
+                name="token"
+                onChange={handleTokenChange}
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                onChange={handleKeepChange}
+                checked={keep}
+              />{' '}
+              Keep login
+            </label>
+          </div>
+          <div>
+            <input type="submit" value="Login" />
+          </div>
         </form>
       </main>
 

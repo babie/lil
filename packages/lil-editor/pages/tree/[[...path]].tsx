@@ -1,15 +1,23 @@
 import { useRouter } from 'next/router'
-import { useRecoilValue } from 'recoil'
+import { useRecoilState } from 'recoil'
+import { loadCurrentUser } from '../../lib/authorization'
 import { currentUserState } from '../../lib/states/user'
 
 export const Tree = () => {
   const router = useRouter()
-  const currentUser = useRecoilValue(currentUserState)
+  const [currentUser, setCurrentUser] = useRecoilState(currentUserState)
 
   if (process.browser) {
     //console.dir(currentUser)
     if (currentUser === null) {
-      router.push('/')
+      loadCurrentUser()
+        .then((user) => {
+          setCurrentUser(user)
+        })
+        .catch((_reason) => {
+          // TODO: display reason
+          router.push('/')
+        })
     }
   }
 

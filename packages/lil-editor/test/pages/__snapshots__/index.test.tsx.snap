@@ -24,21 +24,42 @@ exports[`Home page matches snapshot 1`] = `
       <form
         class="jsx-1799183244"
       >
-        <label
+        <div
           class="jsx-1799183244"
         >
-          Token: 
+          <label
+            class="jsx-1799183244"
+          >
+            Token 
+            <input
+              class="jsx-1799183244"
+              name="token"
+              type="password"
+            />
+          </label>
+        </div>
+        <div
+          class="jsx-1799183244"
+        >
+          <label
+            class="jsx-1799183244"
+          >
+            <input
+              class="jsx-1799183244"
+              type="checkbox"
+            />
+             Keep login
+          </label>
+        </div>
+        <div
+          class="jsx-1799183244"
+        >
           <input
             class="jsx-1799183244"
-            name="token"
-            type="password"
+            type="submit"
+            value="Login"
           />
-        </label>
-        <input
-          class="jsx-1799183244"
-          type="submit"
-          value="Login"
-        />
+        </div>
       </form>
     </main>
     <footer
