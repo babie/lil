@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useRecoilState } from 'recoil'
 import { currentUserState } from '../lib/states'
-import { fetchUser, saveCurrentUser } from '../lib/authorization'
+import { fetchUser, saveCurrentUser } from '../lib/auth'
 
 export const Home = (): JSX.Element => {
   const [token, setToken] = useState('')
@@ -13,7 +13,7 @@ export const Home = (): JSX.Element => {
   const router = useRouter()
 
   if (process.browser) {
-    if (currentUser !== null) {
+    if (currentUser) {
       router.push('/tree')
     }
   }
@@ -35,16 +35,17 @@ export const Home = (): JSX.Element => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     e.stopPropagation()
-    fetchUser(token)
-      .then((user) => {
-        setCurrentUser(user)
-        if (keep) {
-          saveCurrentUser(user)
-        }
-      })
-      .catch((_reason) => {
-        setReason(_reason.message)
-      })
+    const f = async () => {
+      const user = await fetchUser(token)
+      setCurrentUser(user)
+      if (keep) {
+        saveCurrentUser(user)
+      }
+    }
+
+    f().catch((_reason) => {
+      setReason(_reason.message)
+    })
   }
 
   return (
@@ -68,7 +69,8 @@ export const Home = (): JSX.Element => {
           </div>
           <div>
             <label>
-              <input type="checkbox" onChange={handleChange} /> Keep login
+              <input type="checkbox" name="keep" onChange={handleChange} /> Keep
+              login
             </label>
           </div>
           <div>
@@ -96,6 +98,7 @@ export const Home = (): JSX.Element => {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          background-color: var(--cud-brightsky);
         }
 
         main {

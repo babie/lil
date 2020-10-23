@@ -3,59 +3,60 @@
 exports[`Home page matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="jsx-1799183244 container"
+    class="jsx-1891154935 container"
   >
     <main
-      class="jsx-1799183244"
+      class="jsx-1891154935"
     >
       <h1
-        class="jsx-1799183244 title"
+        class="jsx-1891154935 title"
       >
         Lil Editor
       </h1>
       <p
-        class="jsx-1799183244 description"
+        class="jsx-1891154935 description"
       >
         Get started
       </p>
       <p
-        class="jsx-1799183244"
+        class="jsx-1891154935"
       />
       <form
-        class="jsx-1799183244"
+        class="jsx-1891154935"
       >
         <div
-          class="jsx-1799183244"
+          class="jsx-1891154935"
         >
           <label
-            class="jsx-1799183244"
+            class="jsx-1891154935"
           >
             Token 
             <input
-              class="jsx-1799183244"
+              class="jsx-1891154935"
               name="token"
               type="password"
             />
           </label>
         </div>
         <div
-          class="jsx-1799183244"
+          class="jsx-1891154935"
         >
           <label
-            class="jsx-1799183244"
+            class="jsx-1891154935"
           >
             <input
-              class="jsx-1799183244"
+              class="jsx-1891154935"
+              name="keep"
               type="checkbox"
             />
              Keep login
           </label>
         </div>
         <div
-          class="jsx-1799183244"
+          class="jsx-1891154935"
         >
           <input
-            class="jsx-1799183244"
+            class="jsx-1891154935"
             type="submit"
             value="Login"
           />
@@ -63,10 +64,10 @@ exports[`Home page matches snapshot 1`] = `
       </form>
     </main>
     <footer
-      class="jsx-1799183244"
+      class="jsx-1891154935"
     >
       <a
-        class="jsx-1799183244"
+        class="jsx-1891154935"
         href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
         rel="noopener noreferrer"
         target="_blank"
@@ -74,7 +75,7 @@ exports[`Home page matches snapshot 1`] = `
         Powered by 
         <img
           alt="Vercel Logo"
-          class="jsx-1799183244 logo"
+          class="jsx-1891154935 logo"
           src="/vercel.svg"
         />
       </a>
