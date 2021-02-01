@@ -5,7 +5,7 @@ const extract = () => {
   const transformer = (tree, file) => {
     const node = find(tree, { type: 'yaml' })
     if (node && node.value && file && file.data) {
-      file.data.matter = yaml.safeLoad(node.value)
+      file.data.matter = yaml.load(node.value)
     }
   }
   return transformer

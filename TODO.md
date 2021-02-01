@@ -2,6 +2,7 @@
 
 ### Todo
 
+- [ ] Tailwind CSSを導入  
 - [ ] .navbarと.toolbarを.sitemenuと.pagemenuにリネーム  
 - [ ] iOS Safariで.containerの高さが狂わないようにする  
 - [ ] lil-proxyを廃止してapi/index.tsをlil-editorに移す  
@@ -16,4 +17,5 @@
 
 ### Done
 
+- [ ] Next.jsをv9からv10にアップデート  
 

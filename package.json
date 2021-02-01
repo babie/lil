@@ -24,11 +24,11 @@
     "e:test-all": "run-s e:lint e:type-check e:test",
     "e:staged": "yarn workspace lil-editor lint-staged",
     "type-check": "run-s v:type-check e:type-check",
-    "format":     "run-s v:format e:format",
-    "lint":       "run-s v:lint e:lint",
-    "test":       "run-s v:test e:test",
-    "test-all":   "run-s v:test-all e:test-all",
-    "staged":     "run-s v:staged e:staged"
+    "format": "run-s v:format e:format",
+    "lint": "run-s v:lint e:lint",
+    "test": "run-s v:test e:test",
+    "test-all": "run-s v:test-all e:test-all",
+    "staged": "run-s v:staged e:staged"
   },
   "husky": {
     "hooks": {
@@ -37,9 +37,9 @@
     }
   },
   "devDependencies": {
-    "husky": "^4.3.0",
+    "husky": "^4.3.8",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.1.2"
+    "prettier": "^2.2.1"
   },
   "workspaces": {
     "packages": [
