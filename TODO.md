@@ -2,6 +2,7 @@
 
 ### Todo
 
+- [ ] lil-editor/styles/layout.module.cssを削除してTailwindで書き直す  
 - [ ] .navbarと.toolbarを.sitemenuと.pagemenuにリネーム  
 - [ ] iOS Safariで.containerの高さが狂わないようにする  
 - [ ] lil-proxyを廃止してapi/index.tsをlil-editorに移す  
@@ -9,14 +10,13 @@
 - [ ] mdx対応  
 - [ ] ユーザーデータはlil-commonに突っ込んだ方が良い？  
 - [ ] lil-commonをlil-shareにリネーム  
-- [ ] remixiconを導入してsitemenuとpagemenuで表示  
 
 ### Doing
 
-- [ ] lil-editor/styles/layout.module.cssを削除してTailwindで書き直す  
 
 ### Done
 
 - [ ] Next.jsをv9からv10にアップデート  
 - [ ] Tailwind CSSを導入  
+- [ ] remixiconを導入  
 
