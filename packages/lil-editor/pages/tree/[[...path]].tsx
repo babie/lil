@@ -3,6 +3,7 @@ import { useRecoilState } from 'recoil'
 import Link from 'next/link'
 import { loadCurrentUser } from '../../lib/auth'
 import { currentUserState } from '../../lib/states/user'
+import Layout from '../../lib/components/layout'
 
 export const Tree = () => {
   const [currentUser, setCurrentUser] = useRecoilState(currentUserState)
@@ -24,13 +25,13 @@ export const Tree = () => {
 
   if (!currentUser) {
     return (
-      <div>
+      <Layout>
         You are not logined.
         <Link href="/">Back to Top</Link>
-      </div>
+      </Layout>
     )
   }
-  return <div>Tree, user: {currentUser.login}</div>
+  return <Layout>Tree, user: {currentUser.login}</Layout>
 }
 
 export default Tree

@@ -5,7 +5,7 @@ import { useRecoilState } from 'recoil'
 import { currentUserState } from '../lib/states'
 import { fetchUser, saveCurrentUser } from '../lib/auth'
 
-export const Home = (): JSX.Element => {
+export const Home: React.FC = () => {
   const [token, setToken] = useState('')
   const [keep, setKeep] = useState(false)
   const [reason, setReason] = useState('')

@@ -1,0 +1,68 @@
+.layout {
+  --bar-weight: 48px;
+}
+
+.container {
+}
+
+.navbar {
+  position: fixed;
+  color: white;
+  background-color: black;
+}
+
+.toolbar {
+  position: fixed;
+  color: white;
+  background-color: black;
+}
+
+@media (orientation: landscape) {
+  .container {
+    height: 100vh;
+    margin-left: var(--bar-weight);
+    margin-right: var(--bar-weight);
+  }
+
+  .navbar {
+    top: 0;
+    left: 0;
+    width: var(--bar-weight);
+    height: 100vh;
+  }
+
+  .toolbar {
+    top: 0;
+    right: 0;
+    width: var(--bar-weight);
+    height: 100vh;
+  }
+}
+
+@media (orientation: portrait) {
+  .container {
+    width: 100vw;
+    margin-top: var(--bar-weight);
+    margin-bottom: var(--bar-weight);
+  }
+
+  .navbar {
+    top: 0;
+    width: 100vw;
+    height: var(--bar-weight);
+  }
+
+  .toolbar {
+    bottom: 0;
+    width: 100vw;
+    height: var(--bar-weight);
+  }
+}
+
+/* for Safari not Chrome */
+@supports (-webkit-touch-callout: none) {
+  .container {
+    /* 100vh hack for Safari */
+    height: -webkit-fill-available;
+  }
+}
