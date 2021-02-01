@@ -17,11 +17,14 @@
   "dependencies": {
     "@kvs/indexeddb": "^1.0.0",
     "@octokit/core": "^3.1.2",
+    "autoprefixer": "^10.2.4",
     "lil-common": "*",
     "next": "10.0.6",
+    "postcss": "^8.2.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "recoil": "^0.1.2"
+    "recoil": "^0.1.2",
+    "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",
