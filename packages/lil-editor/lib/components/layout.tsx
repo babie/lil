@@ -6,7 +6,7 @@ import FileEdit from 'remixicon/icons/Document/file-edit-line.svg'
 const Layout: React.FC = ({ children }) => {
   return (
     <div className={styles.layout}>
-      <nav className={styles.navbar}>
+      <nav className={styles.sitemenu}>
         <ul>
           <li>
             <HomeSVG style={{ fill: 'white' }} />
@@ -14,7 +14,7 @@ const Layout: React.FC = ({ children }) => {
         </ul>
       </nav>
       <div className={styles.container}>{children}</div>
-      <div className={styles.toolbar}>
+      <div className={styles.pagemenu}>
         <ul>
           <li>
             <FileAdd style={{ fill: 'white' }} />

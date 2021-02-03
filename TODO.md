@@ -3,8 +3,7 @@
 ### Todo
 
 - [ ] lil-editor/styles/layout.module.cssを削除してTailwindで書き直す  
-- [ ] .navbarと.toolbarを.sitemenuと.pagemenuにリネーム  
-- [ ] iOS Safariで.containerの高さが狂わないようにする  
+- [ ] iOS Safariでスクロールしても.containerの高さが狂わないようにする  
 - [ ] lil-proxyを廃止してapi/index.tsをlil-editorに移す  
 - [ ] Markdownのパース時、タイトルと本文以外は全部メタデータに突っ込みpagemenuで表示する  
 - [ ] mdx対応  
@@ -13,6 +12,7 @@
 
 ### Doing
 
+- [ ] .navbarと.toolbarを.sitemenuと.pagemenuにリネーム  
 
 ### Done
 

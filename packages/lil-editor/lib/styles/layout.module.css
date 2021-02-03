@@ -5,13 +5,13 @@
 .container {
 }
 
-.navbar {
+.sitemenu {
   position: fixed;
   color: white;
   background-color: black;
 }
 
-.toolbar {
+.pagemenu {
   position: fixed;
   color: white;
   background-color: black;
@@ -24,14 +24,14 @@
     margin-right: var(--bar-weight);
   }
 
-  .navbar {
+  .sitemenu {
     top: 0;
     left: 0;
     width: var(--bar-weight);
     height: 100vh;
   }
 
-  .toolbar {
+  .pagemenu {
     top: 0;
     right: 0;
     width: var(--bar-weight);
@@ -46,13 +46,13 @@
     margin-bottom: var(--bar-weight);
   }
 
-  .navbar {
+  .sitemenu {
     top: 0;
     width: 100vw;
     height: var(--bar-weight);
   }
 
-  .toolbar {
+  .pagemenu {
     bottom: 0;
     width: 100vw;
     height: var(--bar-weight);
