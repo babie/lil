@@ -11,7 +11,6 @@
 
 ### Doing
 
-- [ ] lil-proxyを廃止してapi/index.tsをlil-editorに移す  
 
 ### Done
 
@@ -19,4 +18,5 @@
 - [ ] Tailwind CSSを導入  
 - [ ] remixiconを導入  
 - [ ] .navbarと.toolbarを.sitemenuと.pagemenuにリネーム  
+- [ ] lil-proxyを廃止してapi/index.tsをlil-editorに移す  
 

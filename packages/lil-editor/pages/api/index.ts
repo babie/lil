@@ -9,9 +9,8 @@ const options = {
 }
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
-  const newReq: NextApiRequest = { ...req } as NextApiRequest
-  newReq.url = req.url.replace('/api', '')
-  return corsProxy(options)(newReq, res)
+  req.url = req.url.replace('/api', '')
+  return corsProxy(options)(req, res)
 }
 
 export default handler
