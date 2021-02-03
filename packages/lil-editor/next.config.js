@@ -17,6 +17,10 @@ module.exports = {
         source: '/edit/:path*',
         destination: '/edit/:path*',
       },
+      {
+        source: '/api/:path*',
+        destination: '/api/:path*',
+      },
     ]
   },
 }

@@ -10,9 +10,6 @@
       "path": "packages/lil-editor"
     },
     {
-      "path": "packages/lil-proxy"
-    },
-    {
       "path": "packages/lil-common"
     }
   ],
