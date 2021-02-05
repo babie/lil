@@ -17,15 +17,11 @@
   "dependencies": {
     "@kvs/indexeddb": "^1.0.0",
     "@octokit/core": "^3.1.2",
-    "autoprefixer": "^10.2.4",
     "lil-common": "*",
     "next": "10.0.6",
-    "postcss": "^8.2.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "recoil": "^0.1.2",
-    "remixicon": "^2.5.0",
-    "tailwindcss": "^2.0.2"
+    "recoil": "^0.1.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -35,6 +31,7 @@
     "@types/react": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.4.0",
     "@typescript-eslint/parser": "^4.4.0",
+    "autoprefixer": "^10.2.4",
     "babel-jest": "^26.5.2",
     "babel-plugin-inline-react-svg": "^1.1.2",
     "eslint": "^7.10.0",
@@ -45,6 +42,10 @@
     "jest": "^26.5.2",
     "jest-watch-typeahead": "^0.6.1",
     "lint-staged": "^10.4.0",
+    "postcss": "^8.2.4",
+    "postcss-nested": "^5.0.3",
+    "remixicon": "^2.5.0",
+    "tailwindcss": "^2.0.2",
     "typescript": "^4.0.3"
   }
 }
