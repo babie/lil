@@ -15,6 +15,7 @@
     "test-all": "yarn lint && yarn type-check && yarn test"
   },
   "dependencies": {
+    "@isomorphic-git/cors-proxy": "^2.7.0",
     "@kvs/indexeddb": "^1.0.0",
     "@octokit/core": "^3.1.2",
     "lil-common": "*",
