@@ -25,10 +25,10 @@
 
 .sitemenu {
   position: fixed;
-  color: white;
   background-color: black;
   ul {
     display: flex;
+    flex-wrap: wrap;
   }
 
   @media (orientation: landscape) {
@@ -37,7 +37,8 @@
     width: var(--bar-weight);
     height: 100%;
     ul {
-      flex-direction: column;
+      height: 100%;
+      align-content: space-around;
     }
   }
 
@@ -46,17 +47,21 @@
     width: 100%;
     height: var(--bar-weight);
     ul {
-      flex-direction: row;
+      justify-content: space-around;
     }
   }
 }
 
 .pagemenu {
   position: fixed;
-  color: white;
-  background-color: black;
+  background-color: transparent;
   ul {
     display: flex;
+    flex-wrap: wrap;
+  }
+  .icon {
+    background-color: black;
+    border-radius: 50%;
   }
 
   @media (orientation: landscape) {
@@ -65,7 +70,8 @@
     width: var(--bar-weight);
     height: 100%;
     ul {
-      flex-direction: column;
+      height: 100%;
+      align-content: space-around;
     }
   }
 
@@ -74,7 +80,7 @@
     width: 100%;
     height: var(--bar-weight);
     ul {
-      flex-direction: row;
+      justify-content: space-around;
     }
   }
 }
