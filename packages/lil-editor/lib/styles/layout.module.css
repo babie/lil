@@ -2,11 +2,20 @@
   --bar-weight: 48px;
 }
 
-.icon {
+.sitemenu_icon {
   fill: white;
   width: 48px;
   height: 48px;
   padding: 6px;
+}
+
+.pagemenu_icon {
+  fill: white;
+  width: 42px;
+  height: 42px;
+  padding: 6px;
+  background-color: black;
+  border-radius: 50%;
 }
 
 .container {
@@ -29,25 +38,25 @@
   ul {
     display: flex;
     flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
   }
 
   @media (orientation: landscape) {
     top: 0;
     left: 0;
-    width: var(--bar-weight);
     height: 100%;
     ul {
+      width: var(--bar-weight);
       height: 100%;
-      align-content: space-around;
     }
   }
 
   @media (orientation: portrait) {
     top: 0;
     width: 100%;
-    height: var(--bar-weight);
     ul {
-      justify-content: space-around;
+      height: var(--bar-weight);
     }
   }
 }
@@ -58,29 +67,25 @@
   ul {
     display: flex;
     flex-wrap: wrap;
-  }
-  .icon {
-    background-color: black;
-    border-radius: 50%;
+    align-content: space-around;
+    justify-content: space-around;
   }
 
   @media (orientation: landscape) {
     top: 0;
     right: 0;
-    width: var(--bar-weight);
     height: 100%;
     ul {
+      width: var(--bar-weight);
       height: 100%;
-      align-content: space-around;
     }
   }
 
   @media (orientation: portrait) {
     bottom: 0;
     width: 100%;
-    height: var(--bar-weight);
     ul {
-      justify-content: space-around;
+      height: var(--bar-weight);
     }
   }
 }
