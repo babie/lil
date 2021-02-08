@@ -9,7 +9,7 @@ const Layout: React.FC = ({ children }) => {
       <nav className={styles.sitemenu}>
         <ul>
           <li>
-            <HomeSVG style={{ fill: 'white' }} />
+            <HomeSVG className={styles.icon} />
           </li>
         </ul>
       </nav>
@@ -17,10 +17,10 @@ const Layout: React.FC = ({ children }) => {
       <div className={styles.pagemenu}>
         <ul>
           <li>
-            <FileAdd style={{ fill: 'white' }} />
+            <FileAdd className={styles.icon} />
           </li>
           <li>
-            <FileEdit style={{ fill: 'white' }} />
+            <FileEdit className={styles.icon} />
           </li>
         </ul>
       </div>

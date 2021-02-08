@@ -2,6 +2,13 @@
   --bar-weight: 48px;
 }
 
+.icon {
+  fill: white;
+  width: 48px;
+  height: 48px;
+  padding: 6px;
+}
+
 .container {
   @media (orientation: landscape) {
     height: 100%;
