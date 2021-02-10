@@ -14,11 +14,12 @@
   width: 42px;
   height: 42px;
   padding: 6px;
-  background-color: black;
+  background-color: var(--accent-color);
   border-radius: 50%;
 }
 
 .container {
+  background-color: var(--base-color);
   @media (orientation: landscape) {
     height: 100%;
     margin-left: var(--bar-weight);
@@ -34,7 +35,7 @@
 
 .sitemenu {
   position: fixed;
-  background-color: black;
+  background-color: var(--theme-color);
   ul {
     display: flex;
     flex-wrap: wrap;
