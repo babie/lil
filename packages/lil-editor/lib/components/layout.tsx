@@ -1,7 +1,7 @@
 import styles from '../styles/layout.module.css'
 import HomeSVG from 'remixicon/icons/Buildings/home-2-line.svg'
-import FileAdd from 'remixicon/icons/Document/file-add-line.svg'
-import FileEdit from 'remixicon/icons/Document/file-edit-line.svg'
+import FileAddSVG from 'remixicon/icons/Document/file-add-line.svg'
+import FileEditSVG from 'remixicon/icons/Document/file-edit-line.svg'
 
 const Layout: React.FC = ({ children }) => {
   return (
@@ -17,10 +17,10 @@ const Layout: React.FC = ({ children }) => {
       <div className={styles.pagemenu}>
         <ul>
           <li>
-            <FileAdd className={styles.pagemenu_icon} />
+            <FileAddSVG className={styles.pagemenu_icon} />
           </li>
           <li>
-            <FileEdit className={styles.pagemenu_icon} />
+            <FileEditSVG className={styles.pagemenu_icon} />
           </li>
         </ul>
       </div>
