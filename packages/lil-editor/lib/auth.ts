@@ -1,6 +1,6 @@
 import { Octokit } from '@octokit/core'
 import { KVSIndexedDB, kvsIndexedDB } from '@kvs/indexeddb'
-import { User } from './states'
+import { User } from '../states'
 
 export const fetchUser = async (token: string): Promise<User> => {
   const octokit = new Octokit({ auth: token })

@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 import { useRecoilState } from 'recoil'
 import Link from 'next/link'
 import { loadCurrentUser } from '../../lib/auth'
-import { currentUserState } from '../../lib/states/user'
-import Layout from '../../lib/components/layout'
+import { currentUserState } from '../../states/user'
+import Layout from '../../components/layout'
 
 export const Tree = () => {
   const [currentUser, setCurrentUser] = useRecoilState(currentUserState)

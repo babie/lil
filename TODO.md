@@ -2,7 +2,6 @@
 
 ### Todo
 
-- [ ] [editor] lib/*を/に移動する  
 - [ ] [viewer] 画面が横長の時、フルブリードレイアウトにする  
 - [ ] [viewer/editor] iOS Safariでスクロールしても.containerの高さが狂わないようにする  
 - [ ] [viewer] Markdownのパース時、タイトルと本文以外は全部メタデータに突っ込みpagemenuで表示する  
@@ -12,6 +11,7 @@
 
 ### Doing
 
+- [ ] [editor] lib/*を/に移動する  
 
 ### Done
 

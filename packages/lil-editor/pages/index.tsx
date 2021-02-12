@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useRecoilState } from 'recoil'
-import { currentUserState } from '../lib/states'
+import { currentUserState } from '../states'
 import { fetchUser, saveCurrentUser } from '../lib/auth'
 
 export const Home: React.FC = () => {
