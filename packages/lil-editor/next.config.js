@@ -1,39 +1,37 @@
 const path = require('path')
 
-const config = {
-  webpack(config) {
+module.exports = {
+  webpack: (config) => {
     // override default transpiler
-    config.module.rules[0].include.push(path.join(__dirname, '../lil-common'))
+    config.module.rules.forEach((rule) => {
+      if (rule.test && rule.test.test('.tsx')) {
+        rule.include.push(path.join(__dirname, '../lil-common'))
+      }
+    })
     return config
   },
-}
-
-module.exports = {
-  ...config,
-  ...{
-    async rewrites() {
-      return [
-        {
-          source: '/tree/:path*',
-          destination: '/tree/:path*',
-        },
-        {
-          source: '/blob/:path*',
-          destination: '/blob/:path*',
-        },
-        {
-          source: '/new/:path*',
-          destination: '/new/:path*',
-        },
-        {
-          source: '/edit/:path*',
-          destination: '/edit/:path*',
-        },
-        {
-          source: '/api/:path*',
-          destination: '/api/:path*',
-        },
-      ]
-    },
+  rewrites: () => {
+    return [
+      {
+        source: '/tree/:path*',
+        destination: '/tree/:path*',
+      },
+      {
+        source: '/blob/:path*',
+        destination: '/blob/:path*',
+      },
+      {
+        source: '/new/:path*',
+        destination: '/new/:path*',
+      },
+      {
+        source: '/edit/:path*',
+        destination: '/edit/:path*',
+      },
+      {
+        source: '/api/:path*',
+        destination: '/api/:path*',
+      },
+    ]
   },
 }
