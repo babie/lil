@@ -1,9 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --theme-color: theme('colors.cud-black');
-  --base-color: theme('colors.cud-white');
-  --accent-color: theme('colors.cud-red');
-}

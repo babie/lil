@@ -3,7 +3,7 @@ import { useRecoilState } from 'recoil'
 import Link from 'next/link'
 import { loadCurrentUser } from '../../lib/auth'
 import { currentUserState } from '../../states/user'
-import Layout from '../../components/layout'
+import { Layout } from 'lil-common/components/layout'
 
 export const Tree = () => {
   const [currentUser, setCurrentUser] = useRecoilState(currentUserState)

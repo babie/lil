@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --theme-color: theme('colors.cud-black');
+  --base-color: theme('colors.cud-white');
+  --accent-color: theme('colors.cud-red');
+}
+
+.sitemenu-icon {
+  fill: white;
+  width: 48px;
+  height: 48px;
+  padding: 6px;
+}
+
+.pagemenu-icon {
+  fill: white;
+  width: 42px;
+  height: 42px;
+  padding: 6px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
