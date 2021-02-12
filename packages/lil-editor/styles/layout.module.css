@@ -21,15 +21,14 @@
 .container {
   background-color: var(--base-color);
   @media (orientation: landscape) {
-    height: 100%;
     margin-left: var(--bar-weight);
     margin-right: var(--bar-weight);
   }
 
   @media (orientation: portrait) {
     width: 100%;
-    margin-top: var(--bar-weight);
-    margin-bottom: var(--bar-weight);
+    padding-top: var(--bar-weight);
+    padding-bottom: var(--bar-weight);
   }
 }
 
