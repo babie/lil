@@ -2,6 +2,11 @@
 
 ### Todo
 
+- [ ] [common] Layoutのサイトメニューを別のコンポーネントに切り出し  
+- [ ] [common] Layoutのページメニューを別のコンポーネントに切り出し  
+- [ ] [common] サイトメニューの中身を呼び出し側から入れ替えられるようにする  
+- [ ] [common] ページメニューの中身を呼び出し側から入れ替えられるようにする  
+- [ ] [common] サイトメニューでトップへのリンクとログイン/ログアウトは端っこに表示する  
 - [ ] [viewer] 画面が横長の時、フルブリードレイアウトにする  
 - [ ] [viewer] Markdownのパース時、タイトルと本文以外は全部メタデータに突っ込みpagemenuで表示する  
 - [ ] mdx対応  
@@ -10,7 +15,6 @@
 
 ### Doing
 
-- [ ] [editor/viewer] 共通コンポーネントをlil-commonに置く  
 
 ### Done
 
@@ -21,4 +25,5 @@
 - [ ] lil-proxyを廃止してapi/index.tsをlil-editorに移す  
 - [ ] [editor] lib/*を/に移動する  
 - [ ] [viewer/editor] iOS Safariでスクロールしても.containerの高さが狂わないようにする  
+- [ ] [editor/viewer] 共通コンポーネントをlil-commonに置く  
 
