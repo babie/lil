@@ -2,34 +2,34 @@
 
 ### Todo
 
-- [ ] [common] .containerのリサイズでキューも併用する  
-- [ ] [common] CSSをtailwind風(@apply)にする  
-- [ ] [common] サイトメニューの中身を呼び出し側から入れ替えられるようにする  
-- [ ] [common] ページメニューの中身を呼び出し側から入れ替えられるようにする  
-- [ ] [common] サイトメニューでトップへのリンクとログイン/ログアウトは端っこに表示する  
-- [ ] [viewer] 画面が横長の時、フルブリードレイアウトにする  
-- [ ] [viewer] remark-tocがprefixオプションに対応したので、自作から置き換える  
-- [ ] [viewer] Markdownのパース時、タイトルと本文以外は全部メタデータに突っ込みpagemenuで表示する  
-- [ ] mdx対応  
-- [ ] ユーザーデータはlil-commonに突っ込んだ方が良い？  
-- [ ] lil-commonをlil-dataにリネーム  
+- [ ] #common .container のリサイズでキューも併用する
+- [ ] #common CSS を tailwind 風(@apply)にする
+- [ ] #common サイトメニューの中身を呼び出し側から入れ替えられるようにする
+- [ ] #common ページメニューの中身を呼び出し側から入れ替えられるようにする
+- [ ] #common サイトメニューでトップへのリンクとログイン/ログアウトは端っこに表示する
+- [ ] #viewer 画面が横長の時、フルブリードレイアウトにする
+- [ ] #viewer remark-toc が prefix オプションに対応したので、自作から置き換える
+- [ ] #viewer Markdown のパース時、タイトルと本文以外は全部メタデータに突っ込み pagemenu で表示する
+- [ ] mdx 対応
+- [ ] ユーザーデータは lil-common に突っ込んだ方が良い？
+- [ ] lil-common を lil-data にリネーム
 
 ### Doing
 
-- [ ] [common] LayoutコンポーネントのCSSの書き方を、<style jsx>ベタ書きからcss``を使うように変更  
+- [ ] メニューバーの position: fixed をやめる
 
 ### Done
 
-- [ ] Next.jsをv9からv10にアップデート  
-- [ ] Tailwind CSSを導入  
-- [ ] remixiconを導入  
-- [ ] .navbarと.toolbarを.sitemenuと.pagemenuにリネーム  
-- [ ] lil-proxyを廃止してapi/index.tsをlil-editorに移す  
-- [ ] [editor] lib/*を/に移動する  
-- [ ] [viewer/editor] iOS Safariでスクロールしても.containerの高さが狂わないようにする  
-- [ ] [editor/viewer] 共通コンポーネントをlil-commonに置く  
-- [ ] [common] Layoutのサイトメニューを別のコンポーネントに切り出し  
-- [ ] [common] Layoutのページメニューを別のコンポーネントに切り出し  
-- [ ] [common] .sitemenu-iconと.pagemenu-iconをグローバルから各コンポーネントに移動する  
-- [ ] [common] resizeイベントで.containerの高さを変更する関数で、幅も変更するようにする  
-
+- [ ] #common Layout コンポーネントから Container コンポーネントを切り出す
+- [ ] Next.js を v9 から v10 にアップデート
+- [ ] Tailwind CSS を導入
+- [ ] remixicon を導入
+- [ ] .navbar と .toolbar を .sitemenu と .pagemenu にリネーム
+- [ ] lil-proxy を廃止して api/index.ts を lil-editor に移す
+- [ ] #editor lib/\*を/に移動する
+- [ ] #viewer #editor iOS Safari でスクロールしても.container の高さが狂わないようにする
+- [ ] #editor #viewer 共通コンポーネントを lil-common に置く
+- [ ] #common Layout のサイトメニューを別のコンポーネントに切り出し
+- [ ] #common Layout のページメニューを別のコンポーネントに切り出し
+- [ ] #common .sitemenu-icon と.pagemenu-icon をグローバルから各コンポーネントに移動する
+- [ ] #common resize イベントで.container の高さを変更する関数で、幅も変更するようにする
