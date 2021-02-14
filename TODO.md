@@ -2,6 +2,7 @@
 
 ### Todo
 
+- [ ] [common] .containerのリサイズでキューも併用する  
 - [ ] [common] CSSをtailwind風(@apply)にする  
 - [ ] [common] サイトメニューの中身を呼び出し側から入れ替えられるようにする  
 - [ ] [common] ページメニューの中身を呼び出し側から入れ替えられるようにする  
@@ -15,7 +16,7 @@
 
 ### Doing
 
-- [ ] [common] .sitemenu-iconと.pagemenu-iconをグローバルから各コンポーネントに移動する  
+- [ ] [common] LayoutコンポーネントのCSSの書き方を、<style jsx>ベタ書きからcss``を使うように変更  
 
 ### Done
 
@@ -29,4 +30,6 @@
 - [ ] [editor/viewer] 共通コンポーネントをlil-commonに置く  
 - [ ] [common] Layoutのサイトメニューを別のコンポーネントに切り出し  
 - [ ] [common] Layoutのページメニューを別のコンポーネントに切り出し  
+- [ ] [common] .sitemenu-iconと.pagemenu-iconをグローバルから各コンポーネントに移動する  
+- [ ] [common] resizeイベントで.containerの高さを変更する関数で、幅も変更するようにする  
 

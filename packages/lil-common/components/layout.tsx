@@ -2,14 +2,36 @@ import { useState, useEffect } from 'react'
 import { SiteMenu } from './SiteMenu'
 import { PageMenu } from './PageMenu'
 
-const getHeight = () =>
-  window.innerHeight ||
-  document.documentElement.clientHeight ||
-  document.body.clientHeight
+type Rect = {
+  width: number | string
+  height: number | string
+}
+const getRect = (): Rect => {
+  const w: number =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth
+  const h: number =
+    window.innerHeight ||
+    document.documentElement.clientHeight ||
+    document.body.clientHeight
 
-const useCurrentHeight = () => {
+  if (w <= h) {
+    return {
+      width: `${w}px`,
+      height: `calc(${h}px - calc(var(--bar-weight) * 2))`,
+    }
+  } else {
+    return {
+      width: `calc(${w}px - calc(var(--bar-weight) * 2))`,
+      height: `${h}px`,
+    }
+  }
+}
+
+const useCurrentRect = (): Rect => {
   // save current window height in the state object
-  const [height, setHeight] = useState(getHeight())
+  const [rect, setRect] = useState(getRect())
 
   // in this case useEffect will execute only once because
   // it does not have any dependencies.
@@ -20,7 +42,7 @@ const useCurrentHeight = () => {
       // prevent execution of previous setTimeout
       clearTimeout(timeoutId)
       // change height from the state object after 150 milliseconds
-      timeoutId = setTimeout(() => setHeight(getHeight()), 150)
+      timeoutId = setTimeout(() => setRect(getRect()), 300)
     }
     // set resize listener
     window.addEventListener('resize', resizeListener)
@@ -32,20 +54,20 @@ const useCurrentHeight = () => {
     }
   }, [])
 
-  return height
+  return rect
 }
 
 export const Layout: React.FC = ({ children }) => {
-  let height: string | number = '100vh'
+  let rect: Rect = { width: '100vw', height: '100vh' }
   if (process.browser) {
-    height = useCurrentHeight()
+    rect = useCurrentRect()
   }
 
   return (
     <>
       <div className="layout">
         <SiteMenu />
-        <div className="container" style={{ height }}>
+        <div className="container" style={{ ...rect }}>
           {children}
         </div>
         <PageMenu />
@@ -59,9 +81,8 @@ export const Layout: React.FC = ({ children }) => {
           }
 
           @media (orientation: portrait) {
-            width: 100%;
-            padding-top: var(--bar-weight);
-            padding-bottom: var(--bar-weight);
+            margin-top: var(--bar-weight);
+            margin-bottom: var(--bar-weight);
           }
         }
       `}</style>
