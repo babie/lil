@@ -15,7 +15,7 @@
 
 ### Doing
 
-- [ ] [common] Layoutのページメニューを別のコンポーネントに切り出し  
+- [ ] [common] .sitemenu-iconと.pagemenu-iconをグローバルから各コンポーネントに移動する  
 
 ### Done
 
@@ -28,4 +28,5 @@
 - [ ] [viewer/editor] iOS Safariでスクロールしても.containerの高さが狂わないようにする  
 - [ ] [editor/viewer] 共通コンポーネントをlil-commonに置く  
 - [ ] [common] Layoutのサイトメニューを別のコンポーネントに切り出し  
+- [ ] [common] Layoutのページメニューを別のコンポーネントに切り出し  
 

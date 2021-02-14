@@ -8,19 +8,3 @@
   --accent-color: theme('colors.cud-red');
   --bar-weight: 48px;
 }
-
-.sitemenu-icon {
-  fill: white;
-  width: 48px;
-  height: 48px;
-  padding: 6px;
-}
-
-.pagemenu-icon {
-  fill: white;
-  width: 42px;
-  height: 42px;
-  padding: 6px;
-  background-color: var(--accent-color);
-  border-radius: 50%;
-}

@@ -3,7 +3,7 @@ import FileAddSVG from 'remixicon/icons/Document/file-add-line.svg'
 import FileEditSVG from 'remixicon/icons/Document/file-edit-line.svg'
 
 const styles = css`
-  .pagemenu {
+  .page-menu {
     position: fixed;
     background-color: transparent;
     ul {
@@ -31,18 +31,27 @@ const styles = css`
       }
     }
   }
+
+  :global(.page-menu-icon) {
+    fill: var(--base-color);
+    width: 42px;
+    height: 42px;
+    padding: 6px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+  }
 `
 
 export const PageMenu: React.FC = () => {
   return (
     <>
-      <div className="pagemenu">
+      <div className="page-menu">
         <ul>
           <li>
-            <FileAddSVG className="pagemenu-icon" />
+            <FileAddSVG className="page-menu-icon" />
           </li>
           <li>
-            <FileEditSVG className="pagemenu-icon" />
+            <FileEditSVG className="page-menu-icon" />
           </li>
         </ul>
       </div>

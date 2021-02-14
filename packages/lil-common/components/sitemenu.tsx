@@ -2,7 +2,7 @@ import css from 'styled-jsx/css'
 import HomeSVG from 'remixicon/icons/Buildings/home-2-line.svg'
 
 const styles = css`
-  .sitemenu {
+  .site-menu {
     position: fixed;
     background-color: var(--theme-color);
     ul {
@@ -29,15 +29,21 @@ const styles = css`
         height: var(--bar-weight);
       }
     }
+    :global(.site-menu-icon) {
+      fill: var(--base-color);
+      width: 48px;
+      height: 48px;
+      padding: 6px;
+    }
   }
 `
 export const SiteMenu: React.FC = () => {
   return (
     <>
-      <nav className="sitemenu">
+      <nav className="site-menu">
         <ul>
           <li>
-            <HomeSVG className="sitemenu-icon" />
+            <HomeSVG className="site-menu-icon" />
           </li>
         </ul>
       </nav>
