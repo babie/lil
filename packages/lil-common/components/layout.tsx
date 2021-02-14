@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import HomeSVG from 'remixicon/icons/Buildings/home-2-line.svg'
 import FileAddSVG from 'remixicon/icons/Document/file-add-line.svg'
 import FileEditSVG from 'remixicon/icons/Document/file-edit-line.svg'
+import { SiteMenu } from './sitemenu'
 
 const getHeight = () =>
   window.innerHeight ||
@@ -45,13 +45,7 @@ export const Layout: React.FC = ({ children }) => {
   return (
     <>
       <div className="layout">
-        <nav className="sitemenu">
-          <ul>
-            <li>
-              <HomeSVG className="sitemenu-icon" />
-            </li>
-          </ul>
-        </nav>
+        <SiteMenu />
         <div className="container" style={{ height }}>
           {children}
         </div>
@@ -67,10 +61,6 @@ export const Layout: React.FC = ({ children }) => {
         </div>
       </div>
       <style jsx>{`
-        .layout {
-          --bar-weight: 48px;
-        }
-
         .container {
           background-color: var(--base-color);
           @media (orientation: landscape) {
@@ -82,35 +72,6 @@ export const Layout: React.FC = ({ children }) => {
             width: 100%;
             padding-top: var(--bar-weight);
             padding-bottom: var(--bar-weight);
-          }
-        }
-
-        .sitemenu {
-          position: fixed;
-          background-color: var(--theme-color);
-          ul {
-            display: flex;
-            flex-wrap: wrap;
-            align-content: space-around;
-            justify-content: space-around;
-          }
-
-          @media (orientation: landscape) {
-            top: 0;
-            left: 0;
-            height: 100%;
-            ul {
-              width: var(--bar-weight);
-              height: 100%;
-            }
-          }
-
-          @media (orientation: portrait) {
-            top: 0;
-            width: 100%;
-            ul {
-              height: var(--bar-weight);
-            }
           }
         }
 

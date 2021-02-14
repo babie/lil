@@ -6,6 +6,7 @@
   --theme-color: theme('colors.cud-black');
   --base-color: theme('colors.cud-white');
   --accent-color: theme('colors.cud-red');
+  --bar-weight: 48px;
 }
 
 .sitemenu-icon {
