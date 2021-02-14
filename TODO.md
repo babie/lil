@@ -2,8 +2,7 @@
 
 ### Todo
 
-- [ ] [common] Layoutのサイトメニューを別のコンポーネントに切り出し  
-- [ ] [common] Layoutのページメニューを別のコンポーネントに切り出し  
+- [ ] [common] CSSをtailwind風(@apply)にする  
 - [ ] [common] サイトメニューの中身を呼び出し側から入れ替えられるようにする  
 - [ ] [common] ページメニューの中身を呼び出し側から入れ替えられるようにする  
 - [ ] [common] サイトメニューでトップへのリンクとログイン/ログアウトは端っこに表示する  
@@ -16,6 +15,7 @@
 
 ### Doing
 
+- [ ] [common] Layoutのページメニューを別のコンポーネントに切り出し  
 
 ### Done
 
@@ -27,4 +27,5 @@
 - [ ] [editor] lib/*を/に移動する  
 - [ ] [viewer/editor] iOS Safariでスクロールしても.containerの高さが狂わないようにする  
 - [ ] [editor/viewer] 共通コンポーネントをlil-commonに置く  
+- [ ] [common] Layoutのサイトメニューを別のコンポーネントに切り出し  
 

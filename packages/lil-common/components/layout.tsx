@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
-import FileAddSVG from 'remixicon/icons/Document/file-add-line.svg'
-import FileEditSVG from 'remixicon/icons/Document/file-edit-line.svg'
-import { SiteMenu } from './sitemenu'
+import { SiteMenu } from './SiteMenu'
+import { PageMenu } from './PageMenu'
 
 const getHeight = () =>
   window.innerHeight ||
@@ -49,16 +48,7 @@ export const Layout: React.FC = ({ children }) => {
         <div className="container" style={{ height }}>
           {children}
         </div>
-        <div className="pagemenu">
-          <ul>
-            <li>
-              <FileAddSVG className="pagemenu-icon" />
-            </li>
-            <li>
-              <FileEditSVG className="pagemenu-icon" />
-            </li>
-          </ul>
-        </div>
+        <PageMenu />
       </div>
       <style jsx>{`
         .container {
@@ -72,35 +62,6 @@ export const Layout: React.FC = ({ children }) => {
             width: 100%;
             padding-top: var(--bar-weight);
             padding-bottom: var(--bar-weight);
-          }
-        }
-
-        .pagemenu {
-          position: fixed;
-          background-color: transparent;
-          ul {
-            display: flex;
-            flex-wrap: wrap;
-            align-content: space-around;
-            justify-content: space-around;
-          }
-
-          @media (orientation: landscape) {
-            top: 0;
-            right: 0;
-            height: 100%;
-            ul {
-              width: var(--bar-weight);
-              height: 100%;
-            }
-          }
-
-          @media (orientation: portrait) {
-            bottom: 0;
-            width: 100%;
-            ul {
-              height: var(--bar-weight);
-            }
           }
         }
       `}</style>
