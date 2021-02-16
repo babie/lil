@@ -57,21 +57,10 @@ const useCurrentRect = (): Rect => {
   return rect
 }
 
-const getContainerStyles = (rect: Rect) => {
+const getContainerStyles = (_rect: Rect) => {
   return css.resolve`
     .container {
-      width: ${rect.width};
-      height: ${rect.height};
       background-color: var(--base-color);
-      @media (orientation: landscape) {
-        margin-left: var(--bar-weight);
-        margin-right: var(--bar-weight);
-      }
-
-      @media (orientation: portrait) {
-        margin-top: var(--bar-weight);
-        margin-bottom: var(--bar-weight);
-      }
     }
   `
 }

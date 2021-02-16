@@ -4,7 +4,6 @@ import FileEditSVG from 'remixicon/icons/Document/file-edit-line.svg'
 
 const styles = css`
   .page-menu {
-    position: fixed;
     background-color: transparent;
     ul {
       display: flex;
@@ -14,19 +13,15 @@ const styles = css`
     }
 
     @media (orientation: landscape) {
-      top: 0;
-      right: 0;
-      height: 100%;
       ul {
+        height: 100vh;
         width: var(--bar-weight);
-        height: 100%;
       }
     }
 
     @media (orientation: portrait) {
-      bottom: 0;
-      width: 100%;
       ul {
+        width: 100vw;
         height: var(--bar-weight);
       }
     }

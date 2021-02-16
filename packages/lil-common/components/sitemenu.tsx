@@ -3,7 +3,6 @@ import HomeSVG from 'remixicon/icons/Buildings/home-2-line.svg'
 
 const styles = css`
   .site-menu {
-    position: fixed;
     background-color: var(--theme-color);
     ul {
       display: flex;
@@ -13,19 +12,15 @@ const styles = css`
     }
 
     @media (orientation: landscape) {
-      top: 0;
-      left: 0;
-      height: 100%;
       ul {
+        height: 100vh;
         width: var(--bar-weight);
-        height: 100%;
       }
     }
 
     @media (orientation: portrait) {
-      top: 0;
-      width: 100%;
       ul {
+        width: 100vw;
         height: var(--bar-weight);
       }
     }
