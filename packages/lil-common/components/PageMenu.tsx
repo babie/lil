@@ -11,19 +11,19 @@ const styles = css`
       align-content: space-around;
       justify-content: space-around;
     }
+  }
 
-    @media (orientation: landscape) {
-      ul {
-        height: 100vh;
-        width: var(--bar-weight);
-      }
+  @media (orientation: landscape) {
+    .page-menu > ul {
+      height: 100vh;
+      width: var(--bar-weight);
     }
+  }
 
-    @media (orientation: portrait) {
-      ul {
-        width: 100vw;
-        height: var(--bar-weight);
-      }
+  @media (orientation: portrait) {
+    .page-menu > ul {
+      width: 100vw;
+      height: var(--bar-weight);
     }
   }
 

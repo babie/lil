@@ -10,26 +10,26 @@ const styles = css`
       align-content: space-around;
       justify-content: space-around;
     }
+  }
 
-    @media (orientation: landscape) {
-      ul {
-        height: 100vh;
-        width: var(--bar-weight);
-      }
+  @media (orientation: landscape) {
+    .site-menu > ul {
+      height: 100vh;
+      width: var(--bar-weight);
     }
+  }
 
-    @media (orientation: portrait) {
-      ul {
-        width: 100vw;
-        height: var(--bar-weight);
-      }
+  @media (orientation: portrait) {
+    .site-menu > ul {
+      width: 100vw;
+      height: var(--bar-weight);
     }
-    :global(.site-menu-icon) {
-      fill: var(--base-color);
-      width: 48px;
-      height: 48px;
-      padding: 6px;
-    }
+  }
+  :global(.site-menu-icon) {
+    fill: var(--base-color);
+    width: 48px;
+    height: 48px;
+    padding: 6px;
   }
 `
 export const SiteMenu: React.FC = () => {
