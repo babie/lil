@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import css from 'styled-jsx/css'
-import { SiteMenu } from './SiteMenu'
-import { PageMenu } from './PageMenu'
-import { Container } from './Container'
+import { SiteBar } from './SiteBar'
+import { PageBar } from './PageBar'
+import { Content } from './Content'
 
 const setViewportProperty = () => {
   let prevClientHeight: number
@@ -45,32 +45,32 @@ const useViewportPropertyUpdate = () => {
 }
 
 const styles = css`
-  .layout {
+  .three-steps-layout {
     display: grid;
     @media (orientation: landscape) {
       grid-template:
-        'header container footer' 100vh
+        'sitebar container pagebar' 100vh
         / 48px auto 48px;
     }
     @media (orientation: portrait) {
       grid-template:
-        'header' 48px
+        'sitebar' 48px
         'container' auto
-        'footer' 48px
+        'pagebar' 48px
         / 100vw;
     }
     height: 100vh;
   }
 `
 
-export const Layout: React.FC = ({ children }) => {
+export const ThreeStepsLayout: React.FC = ({ children }) => {
   useViewportPropertyUpdate()
   return (
     <>
-      <div className="layout">
-        <SiteMenu />
-        <Container>{children}</Container>
-        <PageMenu />
+      <div className="three-steps-layout">
+        <SiteBar />
+        <Content>{children}</Content>
+        <PageBar />
       </div>
       <style jsx>{styles}</style>
     </>

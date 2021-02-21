@@ -3,7 +3,7 @@ import { useRecoilState } from 'recoil'
 import Link from 'next/link'
 import { loadCurrentUser } from '../../lib/auth'
 import { currentUserState } from '../../states/user'
-import { Layout } from 'lil-common/components/'
+import { ThreeStepsLayout } from 'lil-common/components/'
 
 export const Tree = () => {
   const [currentUser, setCurrentUser] = useRecoilState(currentUserState)
@@ -25,13 +25,13 @@ export const Tree = () => {
 
   if (!currentUser) {
     return (
-      <Layout>
+      <ThreeStepsLayout>
         You are not logined.
         <Link href="/">Back to Top</Link>
-      </Layout>
+      </ThreeStepsLayout>
     )
   }
-  return <Layout>Tree, user: {currentUser.login}</Layout>
+  return <ThreeStepsLayout>Tree, user: {currentUser.login}</ThreeStepsLayout>
 }
 
 export default Tree

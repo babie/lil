@@ -3,7 +3,7 @@ import FileAddSVG from 'remixicon/icons/Document/file-add-line.svg'
 import FileEditSVG from 'remixicon/icons/Document/file-edit-line.svg'
 
 const styles = css`
-  .page-menu {
+  .page-bar {
     background-color: transparent;
     ul {
       display: flex;
@@ -14,20 +14,20 @@ const styles = css`
   }
 
   @media (orientation: landscape) {
-    .page-menu > ul {
+    .page-bar > ul {
       height: 100vh;
       width: var(--bar-weight);
     }
   }
 
   @media (orientation: portrait) {
-    .page-menu > ul {
+    .page-bar > ul {
       width: 100vw;
       height: var(--bar-weight);
     }
   }
 
-  :global(.page-menu-icon) {
+  :global(.page-bar-item) {
     fill: var(--base-color);
     width: 42px;
     height: 42px;
@@ -37,16 +37,16 @@ const styles = css`
   }
 `
 
-export const PageMenu: React.FC = () => {
+export const PageBar: React.FC = () => {
   return (
     <>
-      <div className="page-menu">
+      <div className="page-bar">
         <ul>
           <li>
-            <FileAddSVG className="page-menu-icon" />
+            <FileAddSVG className="page-bar-item" />
           </li>
           <li>
-            <FileEditSVG className="page-menu-icon" />
+            <FileEditSVG className="page-bar-item" />
           </li>
         </ul>
       </div>

@@ -1,7 +1,7 @@
 import css from 'styled-jsx/css'
 
 const styles = css`
-  .container {
+  .content {
     background-color: var(--base-color);
     overflow-y: hidden;
     @media (orientation: landscape) {
@@ -11,10 +11,10 @@ const styles = css`
   }
 `
 
-export const Container: React.FC = ({ children }) => {
+export const Content: React.FC = ({ children }) => {
   return (
     <>
-      <div className="container">{children}</div>
+      <div className="content">{children}</div>
       <style jsx>{styles}</style>
     </>
   )

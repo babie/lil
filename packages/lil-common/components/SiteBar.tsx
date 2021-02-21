@@ -2,7 +2,7 @@ import css from 'styled-jsx/css'
 import HomeSVG from 'remixicon/icons/Buildings/home-2-line.svg'
 
 const styles = css`
-  .site-menu {
+  .site-bar {
     background-color: var(--theme-color);
     ul {
       display: flex;
@@ -13,32 +13,32 @@ const styles = css`
   }
 
   @media (orientation: landscape) {
-    .site-menu > ul {
+    .site-bar > ul {
       height: 100vh;
       width: var(--bar-weight);
     }
   }
 
   @media (orientation: portrait) {
-    .site-menu > ul {
+    .site-bar > ul {
       width: 100vw;
       height: var(--bar-weight);
     }
   }
-  :global(.site-menu-icon) {
+  :global(.site-bar-item) {
     fill: var(--base-color);
     width: 48px;
     height: 48px;
     padding: 6px;
   }
 `
-export const SiteMenu: React.FC = () => {
+export const SiteBar: React.FC = () => {
   return (
     <>
-      <nav className="site-menu">
+      <nav className="site-bar">
         <ul>
           <li>
-            <HomeSVG className="site-menu-icon" />
+            <HomeSVG className="site-bar-item" />
           </li>
         </ul>
       </nav>
