@@ -1,6 +1,6 @@
 import React from 'react'
 import unified from 'unified'
-import toc from './remark-toc'
+import toc from 'remark-toc'
 import frontmatter from 'remark-frontmatter'
 import extract from './frontmatter-extract'
 import md2remark from 'remark-parse'
